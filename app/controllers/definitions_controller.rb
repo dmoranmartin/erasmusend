@@ -56,7 +56,7 @@ class DefinitionsController < ApplicationController
 	def upvote
  		@definition = Definition.find(params[:id])
  		@definition.votes.create
-  		redirect_to(words_path)
+  		redirect_to(word_definitions_path)
 	end
 
 
