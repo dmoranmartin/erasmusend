@@ -1,0 +1,21 @@
+<div id="content">
+	<div id="backbox">		
+		<div id="dick">
+			<h1 id="term"> <%= @word.name %></h1>
+				
+			<ul>
+			<% @definitions.each do |definition| %>
+				<li id="origin"><%= definition.origin %></li>
+				<li id="def"><%= definition.text %></li>
+				<br> <h3> Usos: </h3>
+				<li id="example"><%= definition.example %></li>
+				<%= link_to('Editar definición', edit_word_definition_path(id:definition.id)) %>
+				<%= link_to('Eliminar definición', word_definition_path(id:definition.id), :method => :delete) %>
+				<%= pluralize(definition.votes.count, "vote") %>
+				<%= button_to '+1', upvote_word_definition_path(id:definition.id), :method => :post %>
+
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>

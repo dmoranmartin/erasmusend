@@ -1,0 +1,22 @@
+<div id="content">
+	<div id="backbox">
+		
+		
+		<table id="abc"> <tbody>
+			<% @alphabet.each do |letter|  %>
+				<tr> <td id="abctd">
+				<%= link_to(letter, starts_words_path(letter)) %> 
+				</td> </tr>
+			<% end %>
+		</tbody> </table>
+		
+		<div class='abc'>
+			<% @words.each do |word|%>
+			<%= word.name %> 
+			<%= link_to('editar término', edit_word_path(word.id)) %>
+			<%= link_to('eliminar término',word_path(word.id), :method => :delete) %>
+			<br>
+			<% end %>
+		</div>
+	
+</div>

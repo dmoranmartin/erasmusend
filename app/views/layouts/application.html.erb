@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Erasmus </title>
+  <%= include_gon %>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="container">
+  <div id="user_nav">
+   <h3 id="saludo"> <% if user_signed_in? %>
+      Buenas, <strong><%= current_user.email %></strong>. </h3>
+      <h4 id="editar_cerrar"> <%= link_to 'Editar perfil', edit_user_registration_path %> |
+      <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %> </h4>
+    <% else %>
+      <h2> <%= link_to "Registrarse", new_user_registration_path %> |
+      <%= link_to "Iniciar sesión", new_user_session_path %> </h2>
+    <% end %>
+  </div>
+
+  <div id="content">
+      <div id="logo_finder">
+      <table id="headache"> <tr> <td rowspan="2">
+        <div id="logodiv">
+          <div id="logo"></div>
+
+        </div> </td> 
+        <td> 
+            <%= form_tag(words_find_path, {method: :post}) do  %>
+                <%= text_area_tag(:name,'', placeholder: 'Buscar Palabra', size: '24*6')  %>
+                <%= submit_tag('Submit')%>
+              <% end %>
+         </td>
+        </tr>
+        <tr>
+        <td>
+        <div id="createbutton">
+          <%= button_to('Crear Palabra',new_word_path, :method => :get) %>
+        </div> </td>
+        </tr>
+        </table>
+      </div>
+      <td> 
+            <%= form_tag(words_language_path  , method: :get) do  %>
+            <%= select_tag "language", "<option>Inglés</option><option>Español</option><option>Francés</option><option>Alemán</option><option>Italiano</option><option>Finés</option><option>Sueco</option><option>Rumano</option><option>Portugués</option>".html_safe, id: 'lang_select' %>
+            <br>
+            <%= submit_tag('Buscar')%>
+              <% end %>
+         </td>
+  </div>
+
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, id: "flash_#{name}" %>
+  <% end %>
+
+  <%= yield %>
+</div>
+  <%= javascript_include_tag 'application' %>
+</body>
+</html>
+
+<script>
+    $(function(){
+       $("#lang_select").select2({
+    placeholder: "Select a Language"
+  });});
+</script>

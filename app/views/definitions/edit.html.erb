@@ -1,0 +1,19 @@
+<%= form_for [@word, @definition] do |f| %>
+	<%= f.label :text %>
+	<%= f.text_field :text %>
+	<br>
+	<%= f.label :video %>
+	<%= f.text_field :video %>
+	<br>
+	<%= f.label :origin %>
+	<%= f.text_field :origin %>
+	<br>
+	<%= f.label :category %>
+	<%= f.text_field :category %>
+	<br>
+	<%= f.label :example %>
+	<%= f.text_field :example %>
+	<br>
+
+	<%= f.submit 'Edit' %>
+<% end %>

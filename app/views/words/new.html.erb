@@ -1,0 +1,32 @@
+<%= render_breadcrumbs %>
+
+<%= form_for [@word] do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<br>
+	<%= f.label :language %>
+	<%= f.select :language, %w[Inglés Español Francés Alemán Italiano Finés Sueco Rumano Portugués], {multiple: true} %>
+	<br>
+	<%= f.fields_for :definitions do |definition_builder| %>
+	<fieldset>
+	<%= definition_builder.label :origin %>
+	<%= definition_builder.text_field :origin %>
+	<br> 
+	<%= definition_builder.label :text %>
+	<%= definition_builder.text_field :text %>
+	<br>
+	<%= definition_builder.label :video %>
+	<%= definition_builder.text_field :video %>
+	
+	<br>
+	<%= definition_builder.label :category %>
+	<%= definition_builder.select :category, %w[Insultos Memes Sexual Cotidiano], {multiple: true}%>
+	
+	<br>
+	<%= definition_builder.label :example %>
+	<%= definition_builder.text_field :example %>
+	</fieldset>
+	<% end %>
+
+	<%= f.submit 'Guardar' %>
+<% end %>

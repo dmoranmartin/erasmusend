@@ -1,0 +1,223 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require select2-bootstrap
+ */
+
+
+@font-face {
+    font-family: 'franklin_gothic_fsbook';
+    src: url('FranklinGothic-Book-webfont.eot');
+    src: url('FranklinGothic-Book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('FranklinGothic-Book-webfont.woff') format('woff'),
+         url('FranklinGothic-Book-webfont.ttf') format('truetype'),
+         url('FranklinGothic-Book-webfont.svg#franklin_gothic_fsbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'franklin_gothic_fsbook_italic';
+    src: url('FranklinGothic-BookIt-webfont.eot');
+    src: url('FranklinGothic-BookIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('FranklinGothic-BookIt-webfont.woff') format('woff'),
+         url('FranklinGothic-BookIt-webfont.ttf') format('truetype'),
+         url('FranklinGothic-BookIt-webfont.svg#franklin_gothic_fsbook_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'franklin_gothic_fsdemi';
+    src: url('FranklinGothic-Demi-webfont.eot');
+    src: url('FranklinGothic-Demi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('FranklinGothic-Demi-webfont.woff') format('woff'),
+         url('FranklinGothic-Demi-webfont.ttf') format('truetype'),
+         url('FranklinGothic-Demi-webfont.svg#franklin_gothic_fsdemi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'franklin_gothic_fsdemi_italic';
+    src: url('FranklinGothic-DemiIt-webfont.eot');
+    src: url('FranklinGothic-DemiIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('FranklinGothic-DemiIt-webfont.woff') format('woff'),
+         url('FranklinGothic-DemiIt-webfont.ttf') format('truetype'),
+         url('FranklinGothic-DemiIt-webfont.svg#franklin_gothic_fsdemi_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+h1, h2, h3{
+	font-family: 'franklin_gothic_fsdemi', 'Verdana';
+}
+
+body {
+	background-color: #D3DAF7;
+}
+ul {
+    list-style-type: none;
+}
+button {
+	background: none;
+	border: none;
+	font-family: 'franklin_gothic_fsdemi';
+	font-size: 1em;
+	text-transform: uppercase;
+	color: #fff;
+}
+button:hover {
+	color: #990000;
+	font-weight: bold; 
+}
+#user_nav {
+	background-image: url("ColorCabecera.jpg");
+	margin-top: -10px;
+	margin-left: -10px;
+	padding-left: 30px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	color: white;
+	background-size: cover;
+	border-bottom: 1.5px solid #212c63;
+	z-index: 8px
+}
+#content {
+  width: 990px;
+  margin: auto;
+}
+#backbox {
+	width: 990px;
+	margin: auto;
+	background-color: #526DE0;
+  	height: 1000px;
+  	z-index: -10px;
+}
+#term {
+	font-size: 1.5em;
+}
+#alph {
+	font-family: 'franklin_gothic_fsbook';
+	color: white;
+	font-size: 1em;
+	margin-top: 20px;
+}
+#def {
+	font-family: 'franklin_gothic_fsbook';
+	color: black;
+	font-size: 1em;
+	margin-top: 20px;
+}
+#origin {
+	font-family: 'franklin_gothic_fsbook_italic';
+	color: #006600;
+	font-size: 1em;
+	margin-left: -15px;
+	margin-top: -20px;
+	margin-bottom: 10px;
+}
+#example {
+	font-family: 'franklin_gothic_fsbook_italic';
+	color: black;
+	font-size: 15px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+}
+
+#saludo {
+	display: inline;
+}
+#editar_cerrar {
+	font-family: 'franklin_gothic_fsbook_italic';
+	margin-left: 20px;
+	display: inline;
+	text-decoration: none;
+	color: white;
+	text-transform: none;
+}
+#logo_finder {
+	height: 160px;
+	background-image: url("ColorCabecera.jpg");
+	background-size: cover;
+	border-bottom: 2px solid #212c63;
+}
+#logodiv {
+	padding-top: 40px;
+	padding-left: 20px;
+	height: 90px;
+	z-index: 10px;
+}
+#headache {
+	width: 100%;
+}
+#logo {
+	background-image: url("LOGO_ERASMUS.png");
+	background-size: cover;
+	height: 90px;
+	width: 304.24px;
+	z-index: 15px;
+}
+#createbutton {
+	float: right;
+	z-index: 15px;
+	padding-right: 35px;
+}
+#dick {
+	background-color: #fff;
+	float: right;
+	margin-right: 40px;
+	margin-top: 100px;
+	border-radius: 5px;
+	border: 2px solid black;
+	width: 700px;
+	padding: 20px;
+	padding-left: 40px;
+}
+a:link {
+    text-decoration: none;
+}
+a:active {
+    color: white;
+}
+a:visited {
+	color: #000;
+}
+a:hover {
+	color: #990000;
+	font-weight: bold; 
+}
+#abc {
+	float: left;
+	background-color: #394daa;
+	color: white;
+	text-align: center;
+	margin-left: 40px;
+	margin-top: 40px;
+	border: 2px solid #212c63;
+	padding: 10px;
+	border-radius: 3px;
+	font-family: 'franklin_gothic_fsdemi';
+	font-size: 1em;
+	text-transform: uppercase;
+}
+button:active {
+	background-color: #212c63;
+	box-shadow: 0px 0px 10px #212c63;
+	color: #fff;
+}
+#abctd:hover {
+	background-color: #3f56bd;
+	box-shadow: 0px 0px 10px #3f56bd;
+}
