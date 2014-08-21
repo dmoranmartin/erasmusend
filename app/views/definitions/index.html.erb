@@ -1,7 +1,14 @@
 <div id="content">
-	<div id="backbox">		
+	<div id="backbox">
+		<table> <tr> <td> 
+			<div id="voting">
+				<h2 id='term'><%=  @votes %> votos de momento...</h2>
+			</div>
+		</td>
+		<td>
 		<div id="dick">
 			<h1 id="term"> <%= @word.name %></h1>
+			
 				
 			<ul>
 			<% @definitions.each do |definition| %>
@@ -11,11 +18,18 @@
 				<li id="example"><%= definition.example %></li>
 				<%= link_to('Editar definición', edit_word_definition_path(id:definition.id)) %>
 				<%= link_to('Eliminar definición', word_definition_path(id:definition.id), :method => :delete) %>
-				<%= pluralize(definition.votes.count, "vote") %>
+				<%= pluralize(definition.votes.count, "+") %>
+				<%= pluralize(definition.negativevotes.count, "-") %>
 				<%= button_to '+1', upvote_word_definition_path(id:definition.id), :method => :post %>
-
+				<%= button_to '-1', downvote_word_definition_path(id:definition.id), :method => :post %>
+				<% @votes = @votes + definition.votes.count %>
+				<% @negativevotes = @negativevotes + definition.votes.count %>
+				
 				<% end %>
 			</ul>
+			<%= link_to('Creo que puedo definirlo mejor', new_word_definition_path, id: 'new_def') %>
 		</div>
+		</td></tr></table>
+		
 	</div>
 </div>

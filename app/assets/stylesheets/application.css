@@ -104,9 +104,7 @@ button:hover {
 	background-color: #526DE0;
   	height: 1000px;
   	z-index: -10px;
-}
-#term {
-	font-size: 1.5em;
+  	margin-top: -20px;
 }
 #alph {
 	font-family: 'franklin_gothic_fsbook';
@@ -169,19 +167,71 @@ button:hover {
 	width: 304.24px;
 	z-index: 15px;
 }
-#createbutton {
+#createbuttonplace {
 	float: right;
 	z-index: 15px;
-	padding-right: 35px;
+	margin-right: 130px;
+}
+#createbutton {
+	font-family: 'franklin_gothic_fsdemi';
+	color: #fff;
+	background: #494949; /* Old browsers */
+	background: -moz-linear-gradient(top, #494949 1%, #000000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#494949), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #494949 1%,#000000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #494949 1%,#000000 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #494949 1%,#000000 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #494949 1%,#000000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#494949', endColorstr='#000000',GradientType=0 );
+	border-radius: 5px;
+	border: 2px solid #000;
+	padding: 8px;
+	font-size: 1.5em;
+	text-transform: uppercase;
+}
+#createbutton:hover {
+	transition: 160ms;
+	background: #892222; /* Old browsers */
+	background: -moz-linear-gradient(top, #892222 0%, #4f0000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#892222), color-stop(100%,#4f0000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #892222 0%,#4f0000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #892222 0%,#4f0000 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #892222 0%,#4f0000 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #892222 0%,#4f0000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#892222', endColorstr='#4f0000',GradientType=0 );
+	cursor: pointer;
+}
+#createbutton:active {
+	background: #990000; /* Old browsers */
+	background: -moz-linear-gradient(top, #990000 0%, #c66161 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#990000), color-stop(100%,#c66161)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #990000 0%,#c66161 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #990000 0%,#c66161 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #990000 0%,#c66161 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #990000 0%,#c66161 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#990000', endColorstr='#c66161',GradientType=0 );
+	transition: 160ms;
+	cursor: pointer;
 }
 #dick {
 	background-color: #fff;
 	float: right;
 	margin-right: 40px;
-	margin-top: 100px;
+	margin-top: 50px;
 	border-radius: 5px;
 	border: 2px solid black;
 	width: 700px;
+	padding: 20px;
+	padding-left: 40px;
+}
+#dick2 {
+	background-color: #fff;
+	float: left;
+	margin-left: 60px;
+	margin-top: 50px;
+	border-radius: 5px;
+	border: 2px solid black;
+	width: 750px;
 	padding: 20px;
 	padding-left: 40px;
 }
@@ -189,19 +239,28 @@ a:link {
     text-decoration: none;
 }
 a:active {
-    color: white;
+    cursor: pointer;
 }
-a:visited {
+
+#term {
+	font-size: 1.5em;
 	color: #000;
 }
-a:hover {
+#term a:hover {
 	color: #990000;
-	font-weight: bold; 
+}
+#term a:visited {
+	color: #000 !important;
+}
+a:hover {
+	color: #990000 !important;
+	font-weight: bold;
+	cursor: pointer; 
 }
 #abc {
 	float: left;
 	background-color: #394daa;
-	color: white;
+	color: #000;
 	text-align: center;
 	margin-left: 40px;
 	margin-top: 40px;
@@ -212,6 +271,19 @@ a:hover {
 	font-size: 1em;
 	text-transform: uppercase;
 }
+
+#abc a {
+	color: #fff;
+}
+#abc a:visited {
+	color: #fff;
+}
+#editar_cerrar a{
+	color: #fff;
+}
+#editar_cerrar a:visited {
+	color: #fff;
+}
 button:active {
 	background-color: #212c63;
 	box-shadow: 0px 0px 10px #212c63;
@@ -220,4 +292,113 @@ button:active {
 #abctd:hover {
 	background-color: #3f56bd;
 	box-shadow: 0px 0px 10px #3f56bd;
+	cursor: pointer;
+}
+#finder {
+	font-family: 'franklin_gothic_fsdemi';
+	color: #000;
+	background-image: url('CajaGris.jpg');
+	background-size: cover;
+	border-radius: 5px;
+	border: 2px solid #212c63;
+	padding: 8px;
+	font-size: 1em;
+}
+#finder:hover {
+	background-image: none;
+	background-color: #999999;
+	transition: 60ms;
+	cursor: pointer;
+}
+#finder:active {
+	background-color: #666666;
+	cursor: pointer;
+}
+#finderbox {
+	height: 30px;
+	border-radius: 3px;
+	border: 2px solid #000;
+	padding-left: 10px;
+	font-family: 'franklin_gothic_fs';
+}
+#searcher {
+	float: right;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+#flash_alert {
+	font-family: 'franklin_gothic_fsbook';
+	color: #990000;
+	background-color: #000;
+	font-size: 1em;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	margin-left: 30%;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	position: absolute;
+	padding: 8px;
+}
+#lang_select {
+	border-radius: 3px;
+	border: 2px solid #000;
+	padding: 8px;
+	font-family: 'franklin_gothic_fs', 'Verdana';
+	font-weight: bold;
+	color: #fff;
+	font-size: 0.8em;
+	background: #4a78db; /* Old browsers */
+	background: -moz-linear-gradient(top, #4a78db 1%, #394daa 53%, #394daa 53%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#4a78db), color-stop(53%,#394daa), color-stop(53%,#394daa)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #4a78db 1%,#394daa 53%,#394daa 53%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #4a78db 1%,#394daa 53%,#394daa 53%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #4a78db 1%,#394daa 53%,#394daa 53%); /* IE10+ */
+	background: linear-gradient(to bottom, #4a78db 1%,#394daa 53%,#394daa 53%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a78db', endColorstr='#394daa',GradientType=0 );
+	background-color: #394daa;
+}
+#lang_select:hover {
+	background: #273272;
+	cursor: pointer;
+}
+#voted {
+	border-radius: 3px;
+	border: 2px solid #000;
+	padding: 8px;
+	font-family: 'franklin_gothic_fs', 'Verdana';
+	font-weight: bold;
+	color: #fff;
+	margin-right: 5px;
+	font-size: 0.8em;
+	background: #4a78db; /* Old browsers */
+	background: -moz-linear-gradient(top, #4a78db 1%, #394daa 53%, #394daa 53%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#4a78db), color-stop(53%,#394daa), color-stop(53%,#394daa)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #4a78db 1%,#394daa 53%,#394daa 53%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #4a78db 1%,#394daa 53%,#394daa 53%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #4a78db 1%,#394daa 53%,#394daa 53%); /* IE10+ */
+	background: linear-gradient(to bottom, #4a78db 1%,#394daa 53%,#394daa 53%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a78db', endColorstr='#394daa',GradientType=0 );
+}
+#voted:hover {
+	background: #273272;
+	cursor: pointer;
+}
+#new_def {
+	float: right;
+	font-family: 'franklin_gothic_fsdemi';
+	color: #000;
+	background-image: url('CajaGris.jpg');
+	background-size: cover;
+	border-radius: 5px;
+	border: 2px solid #212c63;
+	padding: 8px;
+	font-size: 1em;
+}
+#buttons_header {
+	float: right;
+}
+#voting {
+	margin-top: 50px;
+	background-color: red;
 }

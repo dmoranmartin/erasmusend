@@ -16,7 +16,7 @@
       <h4 id="editar_cerrar"> <%= link_to 'Editar perfil', edit_user_registration_path %> |
       <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %> </h4>
     <% else %>
-      <h2> <%= link_to "Registrarse", new_user_registration_path %> |
+      <h2 id="editar_cerrar"> <%= link_to "Registrarse", new_user_registration_path %> |
       <%= link_to "Iniciar sesión", new_user_session_path %> </h2>
     <% end %>
   </div>
@@ -28,28 +28,39 @@
           <div id="logo"></div>
 
         </div> </td> 
-        <td> 
+        <td id="searcher"> 
             <%= form_tag(words_find_path, {method: :post}) do  %>
-                <%= text_area_tag(:name,'', placeholder: 'Buscar Palabra', size: '24*6')  %>
-                <%= submit_tag('Submit')%>
+                <%= text_field_tag(:name,'', placeholder: '¿Qué demonios buscas?', size: '30*30', id:'finderbox')  %>
+                <%= submit_tag 'Búscame esta', id: 'finder' %>
               <% end %>
          </td>
         </tr>
         <tr>
         <td>
-        <div id="createbutton">
-          <%= button_to('Crear Palabra',new_word_path, :method => :get) %>
+        <div id="createbuttonplace">
+          <%= button_to('Crea una palabra',new_word_path, :method => :get,  id: 'createbutton') %>
         </div> </td>
         </tr>
         </table>
       </div>
-      <td> 
+      <table id="buttons_header">
+        <tr>
+          <td>
+            <%= button_to('FAVORITAS', words_path, id: 'voted') %> 
+          </td>
+          <td>
+           <button id='voted'> CATEGORÍA </button>
+          </td>
+          <td>
+              <%= button_to('SURPRISE', words_random_path, method: :get) %>
+          </td>
+          <td>
             <%= form_tag(words_language_path  , method: :get) do  %>
-            <%= select_tag "language", "<option>Inglés</option><option>Español</option><option>Francés</option><option>Alemán</option><option>Italiano</option><option>Finés</option><option>Sueco</option><option>Rumano</option><option>Portugués</option>".html_safe, id: 'lang_select' %>
-            <br>
-            <%= submit_tag('Buscar')%>
+            <%= select_tag "language", "<option value=""disabled selected>¿ERASMUS?</option><option>Inglés</option><option>Español</option><option>Francés</option><option>Alemán</option><option>Italiano</option><option>Finés</option><option>Sueco</option><option>Rumano</option><option>Portugués</option>".html_safe, onchange:"this.form.submit()", id: 'lang_select' %>
               <% end %>
-         </td>
+            </td>
+        </tr>
+      </table>
   </div>
 
   <% flash.each do |name, msg| %>
@@ -58,13 +69,6 @@
 
   <%= yield %>
 </div>
-  <%= javascript_include_tag 'application' %>
+
 </body>
 </html>
-
-<script>
-    $(function(){
-       $("#lang_select").select2({
-    placeholder: "Select a Language"
-  });});
-</script>

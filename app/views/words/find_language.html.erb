@@ -1,7 +1,14 @@
-	<ul>
+<div id="content">
+	<div id="backbox">
+		
+		<div id="dick2">
+			<ul id="term">
 					
-		<% @words_language.each do |word| %>
-		<li><%= (link_to word.name, word_definitions_path(word.id)) %></li>
-		<% end %>
-					
-	</ul>
+				<% @words_language.each do |word| %>
+				<li><%= (link_to word.name, word_definitions_path(word.id)) %></li>
+				<% end %>
+							
+			</ul>
+		</div>
+	</div>
+</div>

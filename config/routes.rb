@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   post 'words/find' => 'words#find_words'
+  get 'words/random' => 'words#random'
   get 'words/language' => 'words#find_language'
   devise_for :users
 
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
     resources :definitions do
       member do
         post 'upvote'
+        post 'downvote'
       end
     end
   end

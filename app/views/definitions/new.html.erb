@@ -11,12 +11,12 @@
 	<%= f.text_field :video %>
 	
 	<br>
-	<%= f.label :category %>
-	<%= f.text_field :category %>
+	<%= definition_builder.label :category %>
+	<%= definition_builder.select :category, %w[Insultos Memes Sexual Cotidiano], {multiple: true}%>
 	<br>
 	<%= f.label :example %>
 	<%= f.text_field :example %>
 	<br>
 
-	<%= f.submit 'Save' %>
+	<%= f.submit 'Guardar' %>
 <% end %>

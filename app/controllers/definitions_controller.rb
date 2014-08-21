@@ -5,6 +5,9 @@ class DefinitionsController < ApplicationController
 		add_breadcrumb "definitions", word_definitions_path
 		@word = Word.find params[:word_id]
 		@definitions = @word.definitions.all
+		@votes = Vote.count
+		@negativevotes = Negativevote.count
+
 	end
 	def new
 		add_breadcrumb "new", new_word_definition_path
@@ -56,6 +59,11 @@ class DefinitionsController < ApplicationController
 	def upvote
  		@definition = Definition.find(params[:id])
  		@definition.votes.create
+  		redirect_to(word_definitions_path)
+	end
+	def downvote
+		@definition = Definition.find(params[:id])
+ 		@definition.negativevotes.create
   		redirect_to(word_definitions_path)
 	end
 

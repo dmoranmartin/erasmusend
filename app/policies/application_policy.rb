@@ -31,7 +31,7 @@ class ApplicationPolicy
   end
 
   def edit?
-    if current_user.email == 'pepe@yahoo.es'
+    if current_user.email == 'dada@yahoo.com'
       true
     else
       false
