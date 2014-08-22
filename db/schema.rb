@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821144559) do
+ActiveRecord::Schema.define(version: 20140822113723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140821144559) do
     t.text     "example"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "categoryx"
   end
 
   add_index "definitions", ["word_id"], name: "index_definitions_on_word_id", using: :btree

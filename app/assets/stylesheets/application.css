@@ -401,4 +401,74 @@ button:active {
 #voting {
 	margin-top: 50px;
 	background-color: red;
+	max-width: 200px;
+}
+
+.up {
+	width: 30px;
+	height: 30px;
+	background-image: url('LIKE_ICON.png');
+	background-size: 20px 20px;
+	background-color: #005f00;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 10px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	display: inline;
+	float: right;
+}
+.up:hover {
+	background-color: #004c00;
+}
+.down {
+	width: 30px;
+	height: 30px;
+	background-image: url('LIKE_ICON.png');
+	background-size: 20px 20px;
+	background-color: #990000;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 10px;
+	border: none;
+	border-radius: 10px;
+	-webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    cursor: pointer;
+    display: inline;
+}
+.down:hover {
+	background-color: #7a0000;
+}
+#float_right {
+	float: right;
+}
+#banner {
+	background-image: url(http://magicalflirting.com/images/Vertical-Banner-1.gif);
+	width: 150px;
+	margin-left: 20px;
+	margin-top: 20px;
+	background-size: cover;
+}
+
+.vote{
+  width: 300px;
+  border: 1px solid black;
+  height: 9px;
+}
+
+.up-vote{
+  float: left;
+  height: 9px;
+  background: green;
+}
+
+.down-vote{
+  float: left;
+  height: 9px;
+  background: red;
 }

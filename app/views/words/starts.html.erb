@@ -1,9 +1,15 @@
-<ul>
-	<% @words_letter.each do |word| %>
-	<li id="term">
-	<%= link_to( word.name, word_definitions_path(word.id)) %></li>
-	<%= link_to('editar término', edit_word_path(word.id)) %>
-	<%= link_to('eliminar término',word_path(word.id), :method => :delete) %>
-	<% end %>
-</ul>
-	
+<div id="content">
+	<div id="backbox">
+		
+		<div id='dick2'>
+			<div id='term'>
+				<ul>
+					<% @words_letter.each do |word| %>
+					<li id="term">
+					<%= link_to( word.name, word_definitions_path(word.id)) %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

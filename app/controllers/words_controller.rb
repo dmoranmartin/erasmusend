@@ -23,10 +23,10 @@ class WordsController < ApplicationController
 	end
 	def find_category
 		@words_category = []
-			@words= Word.all
-			@words.each do |word|
-				word.definitions.each do |definition|
-					if "definition.category" == "#{params[:category]}"
+		@words= Word.all
+		@words.each do |word|
+			word.definitions.each do |definition|
+				if definition.category == params[:categoryx]
 					@words_category.push(word)
 				end
 			end
@@ -110,7 +110,7 @@ class WordsController < ApplicationController
 	private
 
 	def entry_params
-		params.require(:word).permit(:name, :language, definitions_attributes: [:origin, :text, :video, :category, :example])
+		params.require(:word).permit(:name, :language, definitions_attributes: [:origin, :text, :video, :categoryx, :example])
 	end
 
 end

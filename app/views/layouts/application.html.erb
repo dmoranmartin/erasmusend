@@ -50,7 +50,7 @@
           </td>
           <td>
             <%= form_tag(words_category_path  , method: :get) do  %>
-            <%= select_tag "category", "<option value=""disabled selected>CATEGORÍAS</option><option>Memes</option><option>Insultos</option><option>Sexual</option><option>Cotidiano</option>".html_safe, onchange:"this.form.submit()", id: 'lang_select' %>
+            <%= select_tag "categoryx", "<option value=""disabled selected>CATEGORÍAS</option><option>Memes</option><option>Insultos</option><option>Sexual</option><option>Cotidiano</option>".html_safe, onchange:"this.form.submit()", id: 'lang_select' %>
               <% end %>
           </td>
           <td>
