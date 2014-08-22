@@ -9,7 +9,7 @@
 		</tbody> </table>
 		<div id='dick'>
 			<div id='term'>
-				<% @words.each do |word|%>
+				<% @words_voted.each do |word|%>
 				<%= link_to(word.name, word_definitions_path(word.id))  %> 
 				<br>
 				<% end %>

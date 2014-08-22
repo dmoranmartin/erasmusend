@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   post 'words/find' => 'words#find_words'
+  get 'words/category' => 'words#find_category'
   get 'words/random' => 'words#random'
   get 'words/language' => 'words#find_language'
   devise_for :users

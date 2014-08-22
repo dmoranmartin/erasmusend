@@ -1,11 +1,9 @@
-<%= render_breadcrumbs %>
-
 <%= form_for [@word, @definition] do |f| %>
 	<%= f.label :origin %>
 	<%= f.text_field :origin %>
 	<br> 
 	<%= f.label :text %>
-	<%= f.text_field :text %>
+	<%= f.text_area :text %>
 	<br>
 	<%= f.label :video %>
 	<%= f.text_field :video %>
@@ -15,7 +13,7 @@
 	<%= definition_builder.select :category, %w[Insultos Memes Sexual Cotidiano], {multiple: true}%>
 	<br>
 	<%= f.label :example %>
-	<%= f.text_field :example %>
+	<%= f.text_area :example %>
 	<br>
 
 	<%= f.submit 'Guardar' %>

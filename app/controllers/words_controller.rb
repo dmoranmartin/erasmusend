@@ -21,6 +21,17 @@ class WordsController < ApplicationController
 			render 'find_words'
 		end	
 	end
+	def find_category
+		@words_category = []
+			@words= Word.all
+			@words.each do |word|
+				word.definitions.each do |definition|
+					if "definition.category" == "#{params[:category]}"
+					@words_category.push(word)
+				end
+			end
+		end
+	end
 
 	def find_language
 		@words_language = Word.where "language LIKE ?", "%#{params[:language]}%"
@@ -34,12 +45,22 @@ class WordsController < ApplicationController
 	end
 
 	def index
-		@words = Word.order(name: :asc)
-		@words_name = @words.map(&:name)
-
-	
 		@alphabet = ("a".."z").to_a
-	add_breadcrumb "words", words_path
+			@words_voted = []
+			@votes = 0
+			@negativevotes =0.1
+			@words = Word.all
+			@words.each do |word|
+				word.definitions.each do |definition|
+					@votes += definition.votes.count
+					@negativevotes += definition.negativevotes.count
+				end
+				if (@words_voted.length) < 10 && ((@votes/(@votes +@negativevotes)) > 0.5)
+					@words_voted.push(word)
+					@votes = 0
+					@negativevotes = 0.1
+				end
+			end
 	end
 
 	def new

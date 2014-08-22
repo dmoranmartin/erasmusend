@@ -2,33 +2,35 @@
 	<div id="backbox">
 		<table> <tr> <td> 
 			<div id="voting">
-				<h2 id='term'><%=  @votes %> votos de momento...</h2>
+				<h2 id='term'></h2>
 			</div>
 		</td>
-		<td>
+		<td>			
+				<% @votes = 0 %>
+			
+			<% @definitions.each do |definition| %>
 		<div id="dick">
 			<h1 id="term"> <%= @word.name %></h1>
-			
-				
 			<ul>
-			<% @definitions.each do |definition| %>
 				<li id="origin"><%= definition.origin %></li>
 				<li id="def"><%= definition.text %></li>
 				<br> <h3> Usos: </h3>
 				<li id="example"><%= definition.example %></li>
 				<%= link_to('Editar definición', edit_word_definition_path(id:definition.id)) %>
 				<%= link_to('Eliminar definición', word_definition_path(id:definition.id), :method => :delete) %>
-				<%= pluralize(definition.votes.count, "+") %>
-				<%= pluralize(definition.negativevotes.count, "-") %>
+				<br>
+				<%= pluralize(definition.votes.count, "+ vote") %>
+				<%= pluralize(definition.negativevotes.count, "- vote") %>
 				<%= button_to '+1', upvote_word_definition_path(id:definition.id), :method => :post %>
 				<%= button_to '-1', downvote_word_definition_path(id:definition.id), :method => :post %>
 				<% @votes = @votes + definition.votes.count %>
 				<% @negativevotes = @negativevotes + definition.votes.count %>
-				
-				<% end %>
 			</ul>
-			<%= link_to('Creo que puedo definirlo mejor', new_word_definition_path, id: 'new_def') %>
 		</div>
+			<% end %>
+			<%= @votes %>
+			<%= link_to('Creo que puedo definirlo mejor', new_word_definition_path, id: 'new_def') %>
+		
 		</td></tr></table>
 		
 	</div>

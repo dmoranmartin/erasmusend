@@ -46,13 +46,15 @@
       <table id="buttons_header">
         <tr>
           <td>
-            <%= button_to('FAVORITAS', words_path, id: 'voted') %> 
+            <%= button_to('FAVORITAS', words_path, id: 'voted', method: :get) %> 
           </td>
           <td>
-           <button id='voted'> CATEGORÍA </button>
+            <%= form_tag(words_category_path  , method: :get) do  %>
+            <%= select_tag "category", "<option value=""disabled selected>CATEGORÍAS</option><option>Memes</option><option>Insultos</option><option>Sexual</option><option>Cotidiano</option>".html_safe, onchange:"this.form.submit()", id: 'lang_select' %>
+              <% end %>
           </td>
           <td>
-              <%= button_to('SURPRISE', words_random_path, method: :get) %>
+              <%= button_to('SORPRENDEME', words_random_path, id: 'voted', method: :get) %>
           </td>
           <td>
             <%= form_tag(words_language_path  , method: :get) do  %>
